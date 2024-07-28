@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Account List">
+        <div class="slds-var-m-around_medium">
+            <lightning-button variant='brand' label='Create new account' title='Create new account' onclick={handleShowModal}></lightning-button>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <template if:true={accountsExist}>
+                <lightning-datatable
+                    key-field='id'
+                    data={accounts}
+                    columns={columns}
+                    hide-checkbox-column
+                ></lightning-datatable>
+            </template>
+            <template if:false={accountsExist}>
+                <p>Accounts Do Not Exist!</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

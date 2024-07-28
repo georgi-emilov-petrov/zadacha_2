@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="New Account Data" icon-name="standard:account">
+        <div>
+            <lightning-input label='First Name' value={firstName} onchange={handleInputChange}></lightning-input>
+        </div>
+        <footer class="slds-modal__footer">
+            <lightning-button variant='brand' label='Save' title='title' onclick={handleSave} class="slds-var-p-around_medium"></lightning-button>
+            <lightning-button variant='neutral' label='Cancel' title='title' onclick={handleSave} class="slds-var-p-around_medium"></lightning-button>
+        </footer>
+    </lightning-card>
+</template>

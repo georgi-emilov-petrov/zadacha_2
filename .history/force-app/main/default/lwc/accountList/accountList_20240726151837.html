@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Account List">
+        <div class="slds-m-around_medium">
+            <lightning-button variant='brand' label='Create new account' title='Create new account' onclick={handleShowModal}></lightning-button>
+            <template if:true={accountsExist}>
+                <p>Accounts Exist!</p>
+            </template>
+            <template if:false={accountsExist}>
+                <p>Accounts Do Not Exist!</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

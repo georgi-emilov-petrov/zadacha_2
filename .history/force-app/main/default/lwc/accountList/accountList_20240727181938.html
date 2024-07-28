@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Account List">
+        <div class="slds-var-m-around_medium">
+            <lightning-button variant='brand' label='Create new account' title='Create new account' onclick={handleShowModal}></lightning-button>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <template if:true={accountsExist}>
+                <lightning-datatable
+                    key-field='Id'
+                    data={accounts}
+                    columns={columns}
+                    hide-checkbox-column
+                    class="account-datatable"
+                ></lightning-datatable>
+
+                <template if:true={showModal}>
+                    <section role="dialog">
+                        <div class="slds-modal__container">
+                            <header class="slds-modal__header">
+
+                                <lightning-button variant="brand" label="Close" title="Close" onclick={handleCloseModal} class="slds-float_right"></lightning-button>
+                            </header>
+                            <div class="slds-modal__content">
+                                <c-account-form onclose={handleCloseModal}></c-account-form>
+                            </div>
+                        </div>
+                    </section>
+                </template>
+            </template>
+            <template if:false={accountsExist}>
+                <p>Accounts Do Not Exist!</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
